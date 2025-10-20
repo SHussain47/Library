@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router";
 
-import Register from "./auth/Register";
-import Login from "./auth/Login";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import ProfilePage from "./pages/Profile/ProfilePage";
 
 export default function App() {
   return (
@@ -9,6 +10,8 @@ export default function App() {
       <Routes>
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+
+        <Route path="user-profile" element={<ProfilePage />} />
       </Routes>
     </>
   );
