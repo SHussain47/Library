@@ -33,10 +33,15 @@ export function AuthProvider({ children }) {
       throw Error(result.message);
     }
     setToken(result.token);
-    localStorage.setItem("token", token);
   };
 
-  const value = { token, register, login };
+  // LOGOUT LOGIC
+  const logout = () => {
+    setToken(null);
+    localStorage.removeItem("token");
+  };
+
+  const value = { token, register, login, logout };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
